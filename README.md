@@ -30,8 +30,19 @@ except for in the UPDATE statement for two values, as only name or email can be 
 When inserting a new row, every columns value must be defined. Dropping a table means deleting it, so be careful as the file 
 containing data for that table will be permanently removed. String values must be surrounded by double-quotations. Also for 
 SELECT statements I only included '*' for selecting all columns for readability, this engine does not support selecting individual 
-columns. Beyond that, the engine does give error messages when doing something wrong. And to quit the program just type :q.  
+columns. They keywords are case sensitive and have to be typed in all capitals. Beyond that, the engine does give error messages when doing something wrong.
+And to quit the program just type :q.  
 
 Design of the database engine
 -
+The design for this engine can be broken up like this:  
 
+User Input -> Lexer/Tokenizer -> Indexing -> Cache -> Disk -> Output  
+
+The way it works is by taking what the user entered and tokenizing it, then seeing if it matches a valid statement and performing the required actions needed for it. 
+The lexer loops through the statement and tokenizes what was entered, the lexer also gives compile time errors like missing semi-colons, unclosed strings, etc.. Then instead of 
+building a full parser, since I only had 9 valid statements that could be entered, I just saw if what the user entered matches any of the 9 statements in tokenized form. 
+During tokenization is when the user can get run time errors like if the table does not exist, ID already exists, etc.  
+
+After that indexing is performed, where we find where the information is stored on disk. The data for each table is represented as a series of 4KB pages in one file. There are different kinds of pages representing different information. Page 0 is reserved for meta-data which saves different states of the table when starting up the program again. 
+A FreePages page holds a list of pages that were freed, so they can be used again. A Records page is a page which holds Slots of information, each slot is the actual row data (ID, NAME, EMAIL). A FreeSlotsPage page holds a list of free slots that can be used again when inserting data.
