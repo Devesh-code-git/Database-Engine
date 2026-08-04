@@ -5,7 +5,7 @@ where it is a on-disk database engine which the user can interact with directly 
 
 For one, this was mainly an education project on storing information on disk, and for implementing a persistent B-Plus Tree data structure,  
 for simplicity I only included fixed size data, where the user can store a persons ID, NAME, and EMAIL in a Table. Also unlike SQL-Lite  
-which stores all of its data inside one file on disk, in my engine, each table gets it own file, which also gets deleted when the user DROPS a table.  
+which stores all of its data inside one file on disk, in my engine, each table gets it own file, which also gets deleted when the user DROPS a table.
 As well, the data isn't serialized, so the files containing information about the tables wont necessarily work between other architectures and OS's apart  
 from where it was first made.
 
@@ -32,4 +32,4 @@ except for in the UPDATE statement for two values, as only name or email can be 
 When inserting a new row, every columns value must be defined. Dropping a table means deleting it, so be careful as the file  
 containing data for that table will be permanently removed. String values must be surrounded by double-quotations. Also for  
 SELECT statements I only included '*' for selecting all columns for readability, this engine does not support selecting individual  
-columns.
+columns. Beyond that, the engine does give error messages when doing something wrong.
