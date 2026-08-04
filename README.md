@@ -24,10 +24,10 @@ UPDATE table_name SET {name, email} = "string" WHERE id = num;
 UPDATE table_name SET {name, email} = "string one", {name, email} = "string_two" WHERE id = num;  
 DELETE FROM table_name WHERE id = num;  
 
-I treated the ID value as the primary key for this database, so that means there cant be duplicate ID's in a table.  
+I treated the ID value as the primary key for this database, so that means there cant be duplicate ID's in a table. 
 The values in braces for the SELECT and UPDATE statements means any one of those value can be picked for the statements, 
-except for in the UPDATE statement for two values, as only name or email can be changed once in that statement.  
-When inserting a new row, every columns value must be defined. Dropping a table means deleting it, so be careful as the file  
-containing data for that table will be permanently removed. String values must be surrounded by double-quotations. Also for  
-SELECT statements I only included '*' for selecting all columns for readability, this engine does not support selecting individual  
+except for in the UPDATE statement for two values, as only name or email can be changed once in that statement. 
+When inserting a new row, every columns value must be defined. Dropping a table means deleting it, so be careful as the file 
+containing data for that table will be permanently removed. String values must be surrounded by double-quotations. Also for 
+SELECT statements I only included '*' for selecting all columns for readability, this engine does not support selecting individual 
 columns. Beyond that, the engine does give error messages when doing something wrong. And to quit the program just type :q.
