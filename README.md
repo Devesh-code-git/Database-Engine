@@ -30,4 +30,8 @@ except for in the UPDATE statement for two values, as only name or email can be 
 When inserting a new row, every columns value must be defined. Dropping a table means deleting it, so be careful as the file 
 containing data for that table will be permanently removed. String values must be surrounded by double-quotations. Also for 
 SELECT statements I only included '*' for selecting all columns for readability, this engine does not support selecting individual 
-columns. Beyond that, the engine does give error messages when doing something wrong. And to quit the program just type :q.
+columns. Beyond that, the engine does give error messages when doing something wrong. And to quit the program just type :q.  
+
+Design of the database engine
+-
+
