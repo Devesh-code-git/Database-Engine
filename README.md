@@ -16,7 +16,7 @@ The program takes in user input from the command line, like a REPL to perform ac
 For this project I kept a limited amount of features of a database, but these are all of the valid statements that can be entered to  
 perform actions, it is in the style of a SQL type language.  
 
-CREATE TABLE table_name;
+CREATE TABLE table_name;\n
 DROP TABLE table_name;
 SELECT * FROM table_name;
 SELECT * FROM table_name WHERE id {<, <=, >, >=, =} num;
