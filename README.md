@@ -11,3 +11,5 @@ from where it was first made.
 
 How to run
 -
+Inside the database_design folder is all of the source code including the Makefile which will create the db.exe to run the program.  
+The program takes in user input from the command line, like a REPL to perform actions based on what the user entered.
