@@ -537,6 +537,11 @@ void perform_token_actions() {
 		printf("\033[1;31mTable does not exist\033[0m\n");
 		return;
 	}
+	// If table already exists, cant create it again
+	else if (does_table_exist(path_name) && check == 7) {
+		printf("\033[1;31mTable already exists\033[0m\n");
+		return;
+	}
 
 	/* Calling a function based on the type of statments
 	   to perform the required actions */
