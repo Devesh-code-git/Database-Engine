@@ -16,15 +16,15 @@ The program takes in user input from the command line, like a REPL to perform ac
 For this project I kept a limited amount of features of a database, but these are all of the valid statements that can be entered to  
 perform actions, it is in the style of a SQL type language.  
 
-CREATE TABLE table_name;\n
-DROP TABLE table_name;
-SELECT * FROM table_name;
-SELECT * FROM table_name WHERE id {<, <=, >, >=, =} num;
-SELECT * FROM table_name WHERE id BETWEEN num_one AND num_two;
-INSERT INTO table_name VALUES (num, "string one", "string two");
-UPDATE table_name SET {name, email} = "string" WHERE id = num;
-UPDATE table_name SET {name, email} = "string one", {name, email} = "string_two" WHERE id = num;
-DELETE FROM table_name WHERE id = num;
+CREATE TABLE table_name;  
+DROP TABLE table_name;  
+SELECT * FROM table_name;  
+SELECT * FROM table_name WHERE id {<, <=, >, >=, =} num;  
+SELECT * FROM table_name WHERE id BETWEEN num_one AND num_two;  
+INSERT INTO table_name VALUES (num, "string one", "string two");  
+UPDATE table_name SET {name, email} = "string" WHERE id = num;  
+UPDATE table_name SET {name, email} = "string one", {name, email} = "string_two" WHERE id = num;  
+DELETE FROM table_name WHERE id = num;  
 
 I treated the ID value as the primary key for this database, so that means there cant be duplicate ID's in a table.  
 The values in braces for the SELECT and UPDATE statements means any one of those value can be picked for the statements, 
